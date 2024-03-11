@@ -11,7 +11,6 @@ for (let i = 1; i < numbers.length; i++) {
         max = numbers[i];
     }
 }
-
 console.log("Самое наименьшее число:", min);
 console.log("Самое наибольшее число:", max);
 printDelimiter()
