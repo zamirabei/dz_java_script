@@ -40,15 +40,13 @@ function countVowels(str) {
 
     // Цикл для проверки каждого символа в строке
     for (var i = 0; i < str.length; i++) {
-        // Проверка, является ли текущий символ гласной буквой
-        // if (vowels.indexOf(str[i]) !== -1) {
-        //     count++; // Если да, увеличиваем счетчик на 1
-        // }
+        //Проверка, является ли текущий символ гласной буквой
+        if (vowels.indexOf(str[i]) !== -1) {
+            count++; // Если да, увеличиваем счетчик на 1
+        }
     }
     return count; // Возвращаем количество гласных
 }
-
-// Пример использования функции
 var str = "apple";
 var vowelsCount = countVowels(str);
 console.log(`${str} - количество гласных: ${vowelsCount}`);
