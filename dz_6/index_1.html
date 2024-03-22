@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dz_6</title>
+    <link rel="stylesheet" href="style_1.css">
+</head>
+<body>
+<!--контейнер для счетчика-->
+<!--каждая кнопка имеет атрибут онклик, который будет вызывать функции при щелчке на кнопке-->
+<div id="container_counter">
+    <input type="text" id="counter" class="counter" value="0">
+    <button onclick="increment()">+</button>
+    <button onclick="decrement()">-</button>
+    <button onclick="reset()">Сбросить</button>
+</div>
+
+<!--контейнер traffic_lighт-->
+<div class="traffic_light">
+<!-- при клике вызывается фнкция showMessage, которая показывает сообщение стоп -->
+    <div class="light krasnyi" onclick="showMessage('Стоп')"></div>
+    <div class="light jeltyi" onclick="showMessage('Готовься')"></div>
+    <div class="light zelenyi" onclick="showMessage('Иди')"></div>
+</div>
+
+</body>
+<script src = "app_1.js"> </script>
+</html>

@@ -1,0 +1,36 @@
+#counter {  /*оформление счетчика*/
+    font-size: 30px;
+    color: gray;
+    text-align: center;
+    margin-top: 30px;
+}
+#counter.green { /*цвет текста внутри инпута*/
+    color: green;
+}
+#counter.red{
+    color: red;
+}
+
+.traffic_light{
+    display: flex;
+    flex-direction: column; /*распологаем элементы друг под другом*/
+    align-items: center;    /*центрируем элементы по горизонтали внутри контейнера*/
+    justify-content: center; /*центрируем элементы по вертикали внутри контейнера*/
+    margin-top: 100px; /*отступ сверху*/
+
+}
+.light{  /*светофорные сигналы*/
+    width: 100px;
+    height: 100px;
+    border-radius: 40%;
+    margin: 10px;
+}
+.krasnyi {   /* цвета светофорных сигналов*/
+    background-color: red;
+}
+.jeltyi{
+    background-color: yellow;
+}
+.zelenyi {
+    background-color: green;
+}
