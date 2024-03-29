@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dz_8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table id="moviesTable"> <!--таблица с уникальынм идентификатором -->
+  <thead> <!--заголовок таблицы-->
+    <tr>  <!--строка заголовка таблицы -->
+      <th>Название фильма</th>  <!--ячейка заголовка таблицы-->
+      <th>Год</th>
+      <th>Рейтинг</th>
+      <th>Режиссер</th>
+      <th>Призыв к покупке</th>
+    </tr>
+  </thead>
+  <tbody>  <!-- само тело таблицы -->
+  <!-- будут добавлены строки с фильмами динамически из JavaScript -->
+  </tbody>
+  <div class="modal"><!-- это модальное окно, которое будет отображаться при покупке билета-->
+    <div class="modal-content"><!--содержмиое модального окна -->
+      <span class="close" onclick="closeModal()">&times;</span><!--элемент для закрытия окна с пом.кнопки -->
+      <p>Подтвердите покупку билета или закройте окно</p>
+      <button onclick="confirmPurchase()">Купить</button><!-- кнопка для подтверждения покупки-->
+      <button onclick="closeModal()">Отменить</button><!--кнопка закрытия окна без покупки -->
+    </div>
+  </div>
+</table>
+</body>
+<script src="app.js" ></script>
+</html>
