@@ -1,0 +1,21 @@
+#one {
+    color: orange !important;
+}
+.one {
+    color: green !important;
+}
+div {
+    color: red !important;
+    /*color: rgba(35, 15, 84, 0.64);*/
+}
+/* TODO сделай друг то то то */
+/* 0123456789abcdef */
+/* 0 - 255 */
+div {
+    color: blue;
+}
+p {
+    width: 500px;
+    text-align: justify;
+    line-height: 22px;
+}

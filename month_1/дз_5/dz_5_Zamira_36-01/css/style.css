@@ -1,0 +1,124 @@
+.menu {
+    height: 66px;
+    background-color: #73909b;
+}
+.main {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 66px);
+    background-image: url('../images/image-main.webp');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    -webkit-background-size:cover ;
+    background-size: cover;
+}
+.main h1 {
+    width: 408px;
+    margin: 25px auto 0;
+    font-weight: 500;
+    font-size: 29px;
+    line-height: 36.8px;
+}
+.choose{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.choose .title-wrap {
+    width: 561px;
+    margin: 0 auto;
+    text-align: center;
+}
+.obshee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 32px;
+}
+.picture {
+    height: 588px;
+    width: 480px;
+}
+.ikonka {
+    width: 48px;
+    height: 48px;
+    background-color: #45525B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blok {
+    border-radius: 10px;
+    background-color: #FAFAFC;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-left: 21px;
+    height: 588px;
+}
+.podzagolovki {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #45525b;
+    margin-top: 9px;
+}
+.opisanie {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: #6F7278;
+}
+.right_block {
+    width: 300px;
+    height: 561px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.banner {
+    height: 600.3px;
+    background-image: url('../images/banner.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*не нужно было их писать*/
+}
+.transform {
+    width: 1000px;
+    margin: 50px auto;
+    background-color: #da9a9a;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+.transform div {
+    flex: 1 1 220px;
+    height: 220px;
+    background-color: #74a2bb;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    transition: 500ms;
+}
+.transform:hover .translate {
+    transform: translate(-20px, -20px);
+}
+.transform:hover .rotate {
+    transform: rotate(90deg);
+}
+.transform:hover .scale {
+    transform: scale(0.5);
+}
+.transform:hover .skew {
+    transform: skew( +23deg, 0);
+}

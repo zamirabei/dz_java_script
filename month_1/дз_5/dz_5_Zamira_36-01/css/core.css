@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+.container {
+    width: 1168px;
+    margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #42525B;
+}
+.title__span {
+    text-transform: uppercase;
+    color: #FF8A63;
+    letter-spacing: 2px;
+    line-height: 20px;
+}
+.title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    margin-top: -5px;
+}
+.title__caption {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 13px;
+    color: #6F7278;
+}
+
+

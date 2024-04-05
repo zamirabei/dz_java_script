@@ -1,0 +1,32 @@
+i {
+   color: blue;
+}
+b {
+    color: red;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+    font-size: 25px;
+}
+
+h2{
+    color: blue;
+    text-align: center;
+    font-size: 17px;
+}
+
+p {
+    text-align: justify;
+    font-family: sans-serif;
+    line-height: 30px;
+    text-indent: 35px;
+}
+.second_abzac {
+    word-spacing: 6px;
+}
+body {
+    width: 400px;
+    margin: 0 auto;
+}

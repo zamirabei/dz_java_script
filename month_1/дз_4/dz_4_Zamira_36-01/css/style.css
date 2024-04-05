@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.together {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 55px 0;
+    display: flex;
+    gap: 100px;
+}
+.first_left {
+    background-image: url(../images/IMAGE.jpg);
+    height: 588px;
+    width: 576px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second_right {
+    display: flex;
+    height: 575px;
+    width: 324px;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 45px;
+    justify-content: center;
+    align-items: center;
+}
+.blok {
+    display: flex;
+    border: 1px solid #f0f1f3;
+    border-radius: 6px;
+    background: #fafafc;
+    justify-content: center;
+    align-items: center;
+    width: 324px;
+    height: 93px;
+    gap: 22px;
+}
+.ikonka {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.opisanie {
+    width: 214px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    color: #45525b;
+    font-family: "Times New Roman", sans-serif;
+}

@@ -1,0 +1,376 @@
+.menu
+  height: 66px
+  background-color: #73909b
+
+.main
+  display: flex
+  align-items: center
+  text-align: center
+  height: calc(100vh - 66px)
+  background-image: url('../images/image-main.webp')
+  background-repeat: no-repeat
+  background-position: bottom center
+  -webkit-background-size: cover
+  background-size: cover
+
+  h1
+    width: 408px
+    margin: 25px auto 0
+    font-weight: 500
+    font-size: 29px
+    line-height: 36.8px
+
+.choose
+  padding-top: 100px
+  padding-bottom: 100px
+
+  .title-wrap
+    width: 561px
+    margin: 0 auto
+    text-align: center
+
+.obshee
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: 30px
+  gap: 32px
+
+.picture
+  height: 588px
+  width: 480px
+  border-radius: 30px
+  overflow: hidden
+
+.obshee .picture img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.obshee .right_block
+  width: 300px
+  height: 561px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: start
+  gap: 20px
+
+.blok:hover
+  background-color: #FAFAFC
+  border-color: rgba(202, 204, 209, 0.2)
+
+.blok
+  border: 1px solid transparent
+  border-radius: 10px
+  padding: 21px
+
+.ikonka
+  width: 48px
+  height: 48px
+  background-color: #45525B
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 10px
+
+.podzagolovki
+  font-weight: 500
+  font-size: 14px
+  letter-spacing: 2px
+  text-transform: uppercase
+  color: #45525b
+  margin-top: 9px
+
+.opisanie
+  font-size: 14px
+  font-weight: 400
+  line-height: 19.6px
+  color: #6F7278
+
+.banner
+  height: 600.3px
+  background-image: url('../images/banner.webp')
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+/*display: flex*/
+/*align-items: center*/
+/*justify-content: center*/
+/*не нужно их писать*/
+
+.store
+  padding-top: 99.81px
+  padding-bottom: 100.02px
+  background-color: #FAFAFC
+
+.store .title-wrap
+  width: 600px
+  text-align: left
+  padding-left: 16px
+
+.bloki
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  margin-top: 30px
+  padding-left: 16px
+  column-gap: 16px
+  row-gap: 21px
+
+.pic
+  width: 379px
+  height: 267px
+  overflow: hidden
+  display: flex
+  justify-content: center
+  align-items: center
+
+.box
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  background-color: #FFFFFF
+  width: 379px
+  padding-bottom: 22px
+  border-radius: 10px
+  transition: 2s
+
+.box:hover .box_image
+  transform: scale(1.1)
+
+
+.box .pic img
+  transition: transform 0.3s ease-in
+
+
+
+.pic_text
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding-top: 20.61px
+
+.ikons
+  display: flex
+  align-items: center
+  gap: 16px
+  margin-top: 10.39px
+
+.ikon
+  display: flex
+  align-items: center
+  gap: 5px
+  width: 104px
+  justify-content: center
+
+.pic_opisanie
+  line-height: 16.8px
+  font-weight: 400
+  font-size: 12px
+  letter-spacing: 2px
+  text-transform: uppercase
+  text-align: center
+  color: #6f7278
+
+.pic_podzagolovki
+  line-height: 28px
+  font-weight: 400
+  font-size: 20px
+  text-align: center
+  color: #45525b
+
+.ikon_opisanie
+  line-height: 16.8px
+  font-weight: 400
+  font-size: 12px
+  text-align: center
+  color: #45525b
+
+
+.team_content
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 64px
+
+.team
+  padding-top: 100px
+  padding-bottom: 100px
+
+.team .title-wrap
+  width: 368px
+  text-align: left
+
+.team_container
+  display: flex
+  flex-wrap: wrap
+  row-gap: 16px
+  column-gap: 16px
+  width: 736px
+
+.teammate
+  width: 360px
+  display: flex
+  align-items: center
+  gap: 8px
+
+.team_name
+  line-height: 22.4px
+  font-weight: 500
+  font-size: 16px
+  color: #45525b
+
+.team_opisanie
+  line-height: 16.8px
+  font-weight: 400
+  font-size: 12px
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  color: #6f7278
+
+.store .store_link
+  margin: 0 auto
+  width: 150px
+
+.team .store_link
+  width: 136px
+
+.newsroom
+  padding-top: 100px
+  padding-bottom: 99px
+  background-color: #FAFAFC
+
+  &__span
+    color: #FF8A63
+    font-size: 12px
+    line-height: 16.8px
+    letter-spacing: 2px
+    text-transform: uppercase
+
+  &__title
+    color: #45525b
+    font-size: 16px
+    font-weight: 500
+    line-height: 19.2px
+    height: 39px
+
+  &__date
+    width: 100px
+    margin-left: 30px
+    color: #6F7278
+    font-size: 13px
+    line-height: 19.6px
+    padding-top: 10px
+
+  .title-wrap
+    width: 600px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    text-align: center
+
+  &__content
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &_link
+    margin: 0 auto
+    width: 107px
+    text-decoration: none
+    color: #45525B
+    display: flex
+    gap: 4px
+    padding-top: 19.69px
+
+  &__items
+    display: flex
+    gap: 20px
+    align-items: flex-start
+
+  &__item
+    width: 376px
+    background-color: #fff
+    padding-bottom: 30px
+    border-radius: 0 0 10px 10px
+
+    &__block__image
+      height: 211px
+      border-radius: 10px 10px 0 0
+      img
+        border-radius: 10px 10px 0 0
+        display: block
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    &__block__text
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      gap: 8px
+      padding-top: 28.61px
+      padding-left: 30px
+
+.customers
+  padding-top: 100px
+  padding-bottom: 100px
+  background-color: #FFFFFF
+
+  &_content
+    display: flex
+    gap: 20px
+    flex-direction: column
+
+  .title-wrap
+    width: 584px
+
+  &_text
+    display: flex
+    flex-direction: column
+    gap: 20px
+    align-items: flex-start
+    border: 1px solid rgba(82, 80, 59, 0.1)
+    width: 569px
+    padding-top: 32px
+    padding-left: 30px
+    padding-bottom: 31px
+
+  &_img
+    padding-top: 33px
+
+  &_items
+    display: flex
+    gap: 30px
+
+  &_one
+    line-height: 28.8px
+    font-size: 24px
+    color: #333333
+    font-weight: 500
+
+  &_two
+    line-height: 22.4px
+    font-size: 15px
+    color: #333333
+    font-weight: 400
+
+  &_three
+    line-height: 16px
+    font-size: 16px
+    color: #45525B
+    font-weight: 400
+
+  &_desk
+    border-left: 2px solid #FF8A63
+    width: 508.59px
+    display: flex
+    align-items: center
+    padding-left: 10px
+    height: 24px
