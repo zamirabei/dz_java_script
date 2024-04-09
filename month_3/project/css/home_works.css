@@ -57,7 +57,7 @@
     height: 50px;
     background-color: red;
     left: 0;
-    transition: left 0.5s ease;
+    transition: ease;
 }
 
 .inner_move_block {
