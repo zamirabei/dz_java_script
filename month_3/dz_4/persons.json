@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Марион Котияр",
+    "age": 48,
+    "job": "Французская актриса",
+    "person_photo": "kotiar.jpeg"
+  },
+  {
+    "name": "Одри Тоту",
+    "age": 47,
+    "job": "Французская актриса",
+    "person_photo": "https://img06.rl0.ru/afisha/e375x235p226x0f3446x2160q85i/s5.afisha.ru/mediastorage/ca/ed/bdabbc1a12434a1a86f0c030edca.jpg"
+  },
+  {
+    "name": "Земфира",
+    "age": 47,
+    "job": "Певица",
+    "person_photo": "https://s0.rbk.ru/v6_top_pics/media/img/5/66/755360476376665.png"
+  }
+]
