@@ -1,0 +1,9 @@
+#blok {
+    width: 150px;
+    height: 150px;
+    background-color: #b67c7c;
+    cursor: pointer;
+}
+.bg-color {
+    background-color: #5dc456 !important;
+}
