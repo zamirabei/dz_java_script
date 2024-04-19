@@ -73,3 +73,74 @@ tabParent.addEventListener('mouseenter', () => {
 tabParent.addEventListener('mouseLeave', ()=>{
     intervalId = setInterval(showNextSlide, 3000);
 });
+
+//converter
+
+// const usdInput = document.querySelector('#usd');
+// const somInput = document.querySelector('#som');
+
+// somInput.addEventListener('input', ()=> {
+//     const request = new XMLHttpRequest()
+//     request.open('GET', '../data/converter.json')
+//     request.setRequestHeader('Content-type', 'application/json')
+//     request.send()
+//
+//     request.addEventListener('load', ()=> {
+//         const data = JSON.parse(request.response)
+//         usdInput.value = (somInput.value / data.usd).toFixed(2)
+//     })
+// })
+//
+// usdInput.addEventListener('input', ()=> {
+//     const request = new XMLHttpRequest()
+//     request.open('GET', '../data/converter.json')
+//     request.setRequestHeader('Content-type', 'application/json')
+//     request.send()
+//
+//     request.addEventListener('load', ()=> {
+//         const data = JSON.parse(request.response)
+//         somInput.value = (usdInput.value * data.usd).toFixed(2)
+//     })
+// })
+
+//GRY - gont repeat yourself- принцип программирования - не копируй код
+const converter = (element, target1, target2, current) => {
+    element.oninput = () => {
+        const request = new XMLHttpRequest()
+        request.open('GET', '../data/converter.json')
+        request.setRequestHeader('Content-type', 'application/json')
+        request.send()
+
+        request.onload = () => {
+            const data = JSON.parse(request.responseText);
+           switch (current){
+               case 'som':
+                   target1.value = (element.value / data.usd).toFixed(2)
+                   target2.value = (element.value / data.eur).toFixed(2)
+                   break
+               case  'usd':
+                   target1.value = (element.value * data.usd).toFixed(2)
+                   target2.value = (element.value * data.usd / data.eur).toFixed(2)
+                   break
+               case 'eur':
+                   target1.value = (element.value * data.eur).toFixed(2);
+                   target2.value = (element.value * data.eur / data.usd).toFixed(2);
+                   break;
+               default:
+                   break
+           }
+           // if (element.value === ''){
+           //     target.value = ''
+           // }
+            element.value === '' && (target1.value = target2.value = '');
+        }
+     }
+}
+const somInput = document.getElementById('som');
+const usdInput = document.getElementById('usd');
+const eurInput = document.getElementById('eur');
+
+converter(somInput, usdInput, eurInput, 'som');
+converter(usdInput, somInput, eurInput, 'usd');
+converter(eurInput, somInput, usdInput, 'eur');
+
