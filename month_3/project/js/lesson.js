@@ -144,3 +144,53 @@ converter(somInput, usdInput, eurInput, 'som');
 converter(usdInput, somInput, eurInput, 'usd');
 converter(eurInput, somInput, usdInput, 'eur');
 
+//card switcher
+
+const card = document.querySelector('.card')
+const btnNext = document.querySelector('#btn-next')
+const btnPrev = document.querySelector('#btn-prev')
+
+let count = 1;
+const fetchCard = (cardNumber) => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${cardNumber}`)
+        .then(response=> response.json())
+        .then(data => {
+            card.innerHTML = `
+            <p>${data.title}</p>
+            <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
+            <span>${data.id}</span>
+            `;
+        });
+};
+
+fetchCard(count);
+
+btnNext.onclick = () => {
+    if (count === 200) {
+        count = 1
+    } else {
+        count++
+    }
+    fetchCard(count);
+};
+
+    fetchCard(count - 1);
+btnPrev.onclick = () => {
+        if(count === 1){
+            count = 200;
+        }else {
+            count--
+        }
+    fetchCard(count);
+};
+
+//zapros --- 2part
+const fetchPosts = () => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        });
+}
+fetchPosts();
+
