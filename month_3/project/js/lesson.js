@@ -104,38 +104,76 @@ tabParent.addEventListener('mouseLeave', ()=>{
 // })
 
 //GRY - gont repeat yourself- принцип программирования - не копируй код
-const converter = (element, target1, target2, current) => {
-    element.oninput = () => {
-        const request = new XMLHttpRequest()
-        request.open('GET', '../data/converter.json')
-        request.setRequestHeader('Content-type', 'application/json')
-        request.send()
+// const converter = (element, target1, target2, current) => {
+//     element.oninput = () => {
+//         const request = new XMLHttpRequest()
+//         request.open('GET', '../data/converter.json')
+//         request.setRequestHeader('Content-type', 'application/json')
+//         request.send()
+//
+//         request.onload = () => {
+//             const data = JSON.parse(request.responseText);
+//            switch (current){
+//                case 'som':
+//                    target1.value = (element.value / data.usd).toFixed(2)
+//                    target2.value = (element.value / data.eur).toFixed(2)
+//                    break
+//                case  'usd':
+//                    target1.value = (element.value * data.usd).toFixed(2)
+//                    target2.value = (element.value * data.usd / data.eur).toFixed(2)
+//                    break
+//                case 'eur':
+//                    target1.value = (element.value * data.eur).toFixed(2);
+//                    target2.value = (element.value * data.eur / data.usd).toFixed(2);
+//                    break;
+//                default:
+//                    break
+//            }
+//            // if (element.value === ''){
+//            //     target.value = ''
+//            // }
+//             element.value === '' && (target1.value = target2.value = '');
+//         }
+//      }
+// }
+// const somInput = document.getElementById('som');
+// const usdInput = document.getElementById('usd');
+// const eurInput = document.getElementById('eur');
+//
+// converter(somInput, usdInput, eurInput, 'som');
+// converter(usdInput, somInput, eurInput, 'usd');
+// converter(eurInput, somInput, usdInput, 'eur');
+const converter = async (element, target1, target2, current) => {
+  element.oninput = async () => {
+      try {
+          const response = await fetch ('../data/converter.json')
+          const data = await response.json();
 
-        request.onload = () => {
-            const data = JSON.parse(request.responseText);
-           switch (current){
-               case 'som':
-                   target1.value = (element.value / data.usd).toFixed(2)
-                   target2.value = (element.value / data.eur).toFixed(2)
-                   break
-               case  'usd':
-                   target1.value = (element.value * data.usd).toFixed(2)
-                   target2.value = (element.value * data.usd / data.eur).toFixed(2)
-                   break
-               case 'eur':
-                   target1.value = (element.value * data.eur).toFixed(2);
-                   target2.value = (element.value * data.eur / data.usd).toFixed(2);
-                   break;
-               default:
-                   break
-           }
-           // if (element.value === ''){
-           //     target.value = ''
-           // }
-            element.value === '' && (target1.value = target2.value = '');
-        }
-     }
-}
+          switch (current){
+              case 'som':
+                  target1.value = (element.value / data.usd).toFixed(2);
+                  target2.value = (element.value / data.eur).toFixed(2);
+                  break;
+              case 'usd':
+                  target1.value = (element.value * data.usd).toFixed(2);
+                  target2.value = (element.value * data.usd / data.eur).toFixed(2);
+                  break;
+              case 'eur':
+                  target1.value = (element.value * data.eur).toFixed(2);
+                  target2.value = (element.value * data.eur / data.usd).toFixed(2);
+                  break;
+              default:
+                  break;
+          }
+          if (element.value === '') {
+              target1.value = '';
+              target2.value = '';
+          }
+      } catch (error){
+          console.error('error fetching converter data:', error)
+      }
+  };
+};
 const somInput = document.getElementById('som');
 const usdInput = document.getElementById('usd');
 const eurInput = document.getElementById('eur');
@@ -144,6 +182,7 @@ converter(somInput, usdInput, eurInput, 'som');
 converter(usdInput, somInput, eurInput, 'usd');
 converter(eurInput, somInput, usdInput, 'eur');
 
+
 //card switcher
 
 const card = document.querySelector('.card')
@@ -151,37 +190,29 @@ const btnNext = document.querySelector('#btn-next')
 const btnPrev = document.querySelector('#btn-prev')
 
 let count = 1;
-const fetchCard = (cardNumber) => {
-    fetch(`https://jsonplaceholder.typicode.com/todos/${cardNumber}`)
-        .then(response=> response.json())
-        .then(data => {
-            card.innerHTML = `
+const fetchCard = async (cardNumber) => {
+    try {
+        const response = await fetch (`https://jsonplaceholder.typicode.com/todos/${cardNumber}`)
+        const data = await response.json();
+
+        card.innerHTML = `
             <p>${data.title}</p>
             <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
             <span>${data.id}</span>
             `;
-        });
-};
 
-fetchCard(count);
-
-btnNext.onclick = () => {
-    if (count === 200) {
-        count = 1
-    } else {
-        count++
+    }catch (error){
+        console.error('error fetching card:', error);
     }
-    fetchCard(count);
 };
-
-    fetchCard(count - 1);
-btnPrev.onclick = () => {
-        if(count === 1){
-            count = 200;
-        }else {
-            count--
-        }
-    fetchCard(count);
+fetchCard(count);
+btnNext.onclick = async() => {
+   count = count === 200 ? 1 : count + 1;
+   await fetchCard(count);
+};
+btnPrev.onclick = async() => {
+     count = count === 1 ? 200: count -1;
+     await fetchCard(count);
 };
 
 //zapros --- 2part
@@ -193,4 +224,35 @@ const fetchPosts = () => {
         });
 }
 fetchPosts();
+//weather
+const searchInput = document.querySelector('.cityName')
+// const btnSearch = document.querySelector('#btn-search')
+const cityName = document.querySelector('.city')
+const tempCity = document.querySelector('.temp')
+
+const API_KEY = 'e417df62e04d3b1b111abeab19cea714'
+const BASE_API = 'http://api.openweathermap.org/data/2.5/weather'
+const citySearch = () => {
+ searchInput.oninput = (event)=>{
+    fetch(`${BASE_API}?q=${event.target.value}&appid=${API_KEY}`)
+        .then(response => response.json())
+        .then(data =>{
+          cityName.innerHTML = data.name ? data.name: 'город не найден...'
+          tempCity.innerHTML = data.main?.temp ? Math.round(data.main?.temp - 273) + '&deg;C': '...'
+        } )
+ }
+}
+citySearch()
+
+// //optional chaining - ?.
+//
+// const address = {
+//     street: {
+//         home_number: 103,
+//         str_name: 'ibraimova'
+//     }
+// }
+// console.log(address.street.str_name)
+
+
 
